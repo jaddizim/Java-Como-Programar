@@ -20,7 +20,23 @@ public class Exercicio_20 {
         for (int i = 1; i <= 200000; i++) {
             pi += (double) 4 / (2 * i + 1) * (i % 2 == 1 ? -1 : 1);
 
+            /* A expressão acima é equivalente à debaixo,
+             * em que, na 1.ª hipótese, soma-se a pi um valor
+             * negativo (sendo o mesmo que efetuar subtração);
+             * e, na 2ª hipótese, soma-se a pi um valor positivo.
+             *      if (i % 2 == 1)
+             *          pi += (double) 4 / (2 * i + 1) * (-1);
+             *      else
+             *          pi += (double) 4 / (2 * i + 1) * (1);
+             */
+
             System.out.printf("%-6d%20.5f%n", i, pi);
+
+            if (pi > 3.141585 && pi < 3.141586) {
+                System.out.println("O valor 3,14159 aparece " +
+                        "pela 1ª vez no " + i + "º termo.");
+                break;
+            }
         }
     }
 }
